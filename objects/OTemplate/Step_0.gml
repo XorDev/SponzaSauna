@@ -6,6 +6,8 @@ if (mouse_check_button(mb_right))
 	direction += (mouseLastX - _mouseX);
 	directionUp = clamp(directionUp + (mouseLastY - _mouseY), -89.0, 89.0);
 }
+if mouse_check_button_pressed(mb_right) window_set_cursor(cr_cross);
+if mouse_check_button_released(mb_right) window_set_cursor(cr_default);
 
 mouseLastX = _mouseX;
 mouseLastY = _mouseY;
@@ -41,18 +43,26 @@ z += (keyboard_check(ord("E")) - keyboard_check(ord("Q"))) * _speed;
 var _directionX = dcos(direction);
 var _directionY = -dsin(direction);
 var _directionZ = dtan(directionUp);
-
-camera_set_view_mat(camera, matrix_build_lookat(
+var _view = matrix_build_lookat(
 	x, y, z,
 	x + _directionX,
 	y + _directionY,
 	z + _directionZ,
-	0.0, 0.0, 1.0));
-
+	0.0, 0.0, 1.0);
+	
 var _aspectRatio = window_get_width() / window_get_height();
+var _proj = matrix_build_projection_perspective_fov(
+	-fov, -_aspectRatio, 0.1, clipFar);
 
-camera_set_proj_mat(camera, matrix_build_projection_perspective_fov(
-	-fov, -_aspectRatio, 0.1, clipFar));
+camera_set_view_mat(camera, _view);
+
+if keyboard_check(vk_space)
+{
+	global.sauna_depth_view = _view;
+	global.sauna_depth_mat = matrix_multiply(global.sauna_depth_view, global.sauna_depth_proj);
+}
+
+camera_set_proj_mat(camera, _proj);
 
 if (keyboard_check_pressed(vk_f1))
 {

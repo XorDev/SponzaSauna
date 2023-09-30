@@ -1,10 +1,10 @@
 {
   "resourceType": "GMShader",
   "resourceVersion": "1.0",
-  "name": "ShPassthrough",
+  "name": "sauna_shd_shadow",
   "parent": {
-    "name": "Shaders",
-    "path": "folders/Template/Shaders.yy",
+    "name": "Sauna",
+    "path": "folders/Sauna.yy",
   },
   "type": 1,
 }

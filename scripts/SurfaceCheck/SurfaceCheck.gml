@@ -8,15 +8,14 @@
 /// @param {Real} _width The desired width of the surface.
 /// @param {Real} _height The desired height of the surface.
 ///
-/// @return {Id.Surface} The original surface if it was only resized or
-/// a new surface if given surface did not exist.
-function SurfaceCheck(_surface, _width, _height)
+/// @return {Id.Surface}
+function SurfaceCheck(_surface, _width, _height, _format=surface_rgba8unorm)
 {
 	_width = max(_width, 1);
 	_height = max(_height, 1);
 	if (!surface_exists(_surface))
 	{
-		_surface = surface_create(_width, _height);
+		_surface = surface_create(_width, _height, _format);
 	}
 	else if (surface_get_width(_surface) != _width
 		|| surface_get_height(_surface) != _height)
