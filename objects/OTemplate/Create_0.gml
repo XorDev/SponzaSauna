@@ -1,7 +1,7 @@
 draw_set_font(FntOpenSans10);
 gpu_set_tex_mip_enable(true);
 
-sauna_init();
+sauna_init(1024);
 
 camera = camera_create();
 clipFar = 512.0;

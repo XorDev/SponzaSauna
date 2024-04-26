@@ -1,10 +1,12 @@
 {
-  "resourceType": "GMShader",
-  "resourceVersion": "1.0",
-  "name": "sauna_shd_post",
-  "parent": {
-    "name": "Sauna",
-    "path": "folders/Sauna.yy",
+  "$GMShader":"",
+  "%Name":"sauna_shd_post",
+  "name":"sauna_shd_post",
+  "parent":{
+    "name":"Sauna",
+    "path":"folders/Sauna.yy",
   },
-  "type": 1,
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
 }

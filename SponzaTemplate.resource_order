@@ -1,5 +1,5 @@
 {
-  "FolderOrderSettings": [
+  "FolderOrderSettings":[
     {"name":"Sauna","order":2,"path":"folders/Sauna.yy",},
     {"name":"Template","order":1,"path":"folders/Template.yy",},
     {"name":"Fonts","order":3,"path":"folders/Template/Fonts.yy",},
@@ -7,7 +7,7 @@
     {"name":"Rooms","order":4,"path":"folders/Template/Rooms.yy",},
     {"name":"Scripts","order":2,"path":"folders/Template/Scripts.yy",},
   ],
-  "ResourceOrderSettings": [
+  "ResourceOrderSettings":[
     {"name":"spr_noise","order":5,"path":"sprites/spr_noise/spr_noise.yy",},
     {"name":"SprMetallicRoughness","order":4,"path":"sprites/SprMetallicRoughness/SprMetallicRoughness.yy",},
     {"name":"StringExplode","order":1,"path":"scripts/StringExplode/StringExplode.yy",},

@@ -98,7 +98,7 @@ if (guiShow)
 		Min: 0.1,
 		Max: 3,
 		Round: false,
-		OnChange: method(self, function (_value) { fog_dense = _value; }),
+		OnChange: method(self, function (_value) { global.sauna_fog_dense = _value; }),
 	})
 	.Newline()
 	gui.Slider("fog-height", global.sauna_fog_height, {
@@ -106,7 +106,7 @@ if (guiShow)
 		Min: 0,
 		Max: 10,
 		Round: false,
-		OnChange: method(self, function (_value) { fog_height = _value; }),
+		OnChange: method(self, function (_value) { global.sauna_fog_height = _value; }),
 	})
 	.Newline()
 	gui.Slider("light-fov", global.sauna_light_fov, {
@@ -114,11 +114,11 @@ if (guiShow)
 		Min: 1,
 		Max: 150,
 		Round: false,
-		OnChange: method(self, function (_value) { light_fov = _value; depth_proj = matrix_build_projection_perspective_fov(light_fov,1,1,10000);}),
+		OnChange: method(self, function (_value) { global.sauna_light_fov = _value; global.sauna_depth_proj = matrix_build_projection_perspective_fov(global.sauna_light_fov,1,1,10000);}),
 	})
 	.Newline()
 	;
 	;
 }
 
-if keyboard_check(ord("1")) draw_surface_ext(depth_surf,8,8,0.2,0.2,0,-1,1);
+if keyboard_check(ord("1")) draw_surface_ext(global.sauna_depth_surf,8,8,0.2,0.2,0,#101010,1);

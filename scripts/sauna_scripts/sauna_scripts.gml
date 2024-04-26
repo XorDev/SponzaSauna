@@ -1,4 +1,4 @@
-function sauna_init()
+function sauna_init(res)
 {
 	global.sauna_surf_color = -1;
 	global.sauna_surf_shade = -1;
@@ -8,7 +8,7 @@ function sauna_init()
 	global.sauna_mat_identity = matrix_build_identity();
 	global.sauna_depth_view = matrix_build_lookat(0,0,0,0,0,0,0,0,1);
 	global.sauna_depth_proj = matrix_build_projection_perspective_fov(global.sauna_light_fov,1,1,10000);
-	global.sauna_depth_size = 2048;
+	global.sauna_depth_size = res;
 	global.sauna_depth_surf = -1;
 
 	global.sauna_fog_dense = 1;
